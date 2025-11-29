@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Card from '../components/Card'
 import StarRating from '../components/StarRating'
 import { useIsMobile } from '../hooks/useAppleScroll'
+import { useSEO } from '../hooks/useSEO'
 import api from '../services/api'
 import { 
   Scale, 
@@ -45,6 +46,14 @@ function Home() {
   const testimonialsRef = useRef(null)
   const ctaRef = useRef(null)
   const practiceCarouselRef = useRef(null)
+
+  // SEO Optimization
+  useSEO({
+    title: 'Best Lawyers in Jaipur | M.R. Advocates & Associates',
+    description: 'Top law firm in Jaipur, Rajasthan. Expert lawyers for civil, criminal, corporate, family law. Trusted legal services with 25+ years experience.',
+    keywords: 'best lawyers Jaipur, top advocates Rajasthan, legal services Jaipur, civil lawyer, criminal lawyer, corporate lawyer, family lawyer Jaipur',
+    canonical: 'https://www.mradvocates.in'
+  })
 
   useEffect(() => {
     fetchHomeData()
@@ -224,9 +233,9 @@ function Home() {
               <Gavel size={18} />
               <span>Trusted Legal Firm</span>
             </div>
-            <h2 className="home-intro-title">
+            <h1 className="home-intro-title">
               Trusted Legal Counsel in <span className="home-gradient-text">Jaipur</span>
-            </h2>
+            </h1>
             <div className="home-intro-content">
               <div className="home-intro-text">
                 <p className="home-intro-para">
@@ -280,7 +289,7 @@ function Home() {
       >
         <div className="home-container">
           <div className="home-section-header">
-            <h2 className="home-section-title">Why Choose Us</h2>
+            <h2 className="home-section-title">Why Choose Our Law Firm in Jaipur</h2>
             <p className="home-section-subtitle">Excellence in every aspect of legal representation</p>
           </div>
           <div className="home-features-grid">

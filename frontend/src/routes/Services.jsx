@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import api from '../services/api'
 import Icon from '../components/Icon'
+import { useSEO } from '../hooks/useSEO'
 
 function Services() {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
+
+  // SEO Optimization
+  useSEO({
+    title: 'Legal Services in Jaipur | M.R. Advocates',
+    description: 'Comprehensive legal services in Jaipur: litigation, documentation, advisory, ADR, compliance. Expert lawyers for all your legal needs.',
+    keywords: 'legal services Jaipur, litigation services, legal documentation, legal advisory, ADR services, compliance services Rajasthan',
+    canonical: 'https://www.mradvocates.in/services'
+  })
 
   useEffect(() => {
     fetchServices()
@@ -26,9 +36,9 @@ function Services() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Our Services</h1>
+        <h1 className="section-title">Our Legal Services in Jaipur</h1>
         <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-xl)' }}>
-          We provide comprehensive legal services tailored to meet your specific needs. Our experienced advocates are committed to delivering excellence in every matter we handle.
+          We provide comprehensive legal services in Jaipur tailored to meet your specific needs. Our experienced lawyers and advocates are committed to delivering excellence in litigation, documentation, legal advisory, alternative dispute resolution (ADR), and compliance services. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/contact" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>contact us</Link> for expert legal consultation.
         </p>
         <div className="grid grid-3">
           {services.map((service, index) => {

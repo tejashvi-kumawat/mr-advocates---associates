@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function FAQ() {
   const [faqs, setFaqs] = useState([])
   const [loading, setLoading] = useState(true)
   const [openIndex, setOpenIndex] = useState(null)
+
+  // SEO Optimization
+  useSEO({
+    title: 'Legal FAQ | Common Questions Answered | Jaipur Lawyers',
+    description: 'Frequently asked questions about legal services in Jaipur. Get answers about our law firm, legal processes, and how we can help you.',
+    keywords: 'legal FAQ Jaipur, law firm questions, legal consultation FAQ, lawyers FAQ Rajasthan',
+    canonical: 'https://www.mradvocates.in/faq'
+  })
 
   useEffect(() => {
     fetchFAQs()
@@ -30,9 +40,9 @@ function FAQ() {
   return (
     <section className="section">
       <div className="container" style={{ maxWidth: '900px' }}>
-        <h1 className="section-title">Frequently Asked Questions</h1>
+        <h1 className="section-title">Frequently Asked Questions About Legal Services</h1>
         <p style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-          Find answers to common questions about our services and legal processes.
+          Find answers to common questions about our legal services in Jaipur, legal processes, and how our experienced lawyers can help you. Need more information? <Link to="/contact" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Contact our law firm</Link> or explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link>.
         </p>
         {faqs.length === 0 ? (
           <p style={{ textAlign: 'center' }}>No FAQs available.</p>

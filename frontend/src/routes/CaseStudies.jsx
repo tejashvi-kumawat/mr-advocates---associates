@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function CaseStudies() {
   const [cases, setCases] = useState([])
   const [loading, setLoading] = useState(true)
+
+  // SEO Optimization
+  useSEO({
+    title: 'Legal Case Studies | Success Stories | Jaipur Lawyers',
+    description: 'Explore successful legal case studies from M.R. Advocates Jaipur. Real cases showcasing our expertise in civil, criminal, and corporate law.',
+    keywords: 'legal case studies Jaipur, successful cases, law firm success stories, legal victories Rajasthan',
+    canonical: 'https://www.mradvocates.in/case-studies'
+  })
 
   useEffect(() => {
     fetchCases()
@@ -26,9 +35,9 @@ function CaseStudies() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Case Studies</h1>
+        <h1 className="section-title">Our Legal Case Studies and Success Stories</h1>
         <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-xl)' }}>
-          Explore our successful case studies showcasing our expertise and commitment to achieving favorable outcomes for our clients.
+          Explore our successful legal case studies from Jaipur showcasing our expertise and commitment to achieving favorable outcomes for our clients in civil law, criminal law, corporate law, and family law matters. Learn more about our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/testimonials" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>read client testimonials</Link>.
         </p>
         {cases.length === 0 ? (
           <p style={{ textAlign: 'center' }}>No case studies available at the moment.</p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function LegalNews() {
   const [news, setNews] = useState([])
@@ -9,6 +10,14 @@ function LegalNews() {
   const [category, setCategory] = useState('')
   const [search, setSearch] = useState('')
   const [ref, visible] = useScrollReveal({ once: true })
+
+  // SEO Optimization
+  useSEO({
+    title: 'Legal News & Updates | Law Articles | Jaipur Lawyers',
+    description: 'Latest legal news, updates, and articles from Jaipur. Stay informed about Indian law, judicial pronouncements, and legal reforms.',
+    keywords: 'legal news Jaipur, law updates, legal articles Rajasthan, Indian law news, judicial updates',
+    canonical: 'https://www.mradvocates.in/legal-news'
+  })
 
   useEffect(() => {
     fetchNews()
@@ -44,9 +53,9 @@ function LegalNews() {
   return (
     <section className="section" ref={ref}>
       <div className="container">
-        <h1 className="section-title">Legal News & Updates</h1>
+        <h1 className="section-title">Legal News and Updates from Jaipur</h1>
         <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-xl)' }}>
-          Stay informed about the latest developments in Indian law, judicial pronouncements, and legal reforms that may impact you.
+          Stay informed about the latest developments in Indian law, judicial pronouncements, and legal reforms that may impact you. Our law firm in Jaipur provides expert insights on civil law, criminal law, corporate law, and family law updates. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> for specialized legal services.
         </p>
 
         <div style={{ marginBottom: 'var(--spacing-xl)', display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -82,7 +91,7 @@ function LegalNews() {
                 {article.image_url && (
                   <img 
                     src={article.image_url} 
-                    alt={article.title}
+                    alt={`${article.title} - Legal News Article from M.R. Advocates Jaipur`}
                     style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: 'var(--border-radius)', marginBottom: 'var(--spacing-md)' }}
                   />
                 )}

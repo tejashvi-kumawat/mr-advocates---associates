@@ -1,12 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, Map } from 'lucide-react'
+import { useSEO } from '../hooks/useSEO'
 
 function Contact() {
+  // SEO Optimization
+  useSEO({
+    title: 'Contact Best Lawyers in Jaipur | M.R. Advocates',
+    description: 'Contact our law firm in Jaipur, Rajasthan. Get expert legal consultation. Phone: +91-9782828393. Email: info@mradvocates.in',
+    keywords: 'contact lawyers Jaipur, law firm contact, legal consultation Jaipur, lawyer phone number Rajasthan',
+    canonical: 'https://www.mradvocates.in/contact'
+  })
+
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Contact Us</h1>
+        <h1 className="section-title">Contact Our Law Firm in Jaipur</h1>
         
         <div className="grid grid-2" style={{ gap: 'var(--spacing-2xl)' }}>
           <div className="contact-info">
