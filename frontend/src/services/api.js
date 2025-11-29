@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api'
+// Backend URL - Use environment variable or default to production
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://mradvocates.pythonanywhere.com/api'
 
 class ApiService {
   constructor() {

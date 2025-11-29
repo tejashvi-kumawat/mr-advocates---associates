@@ -7,7 +7,17 @@ SECRET_KEY = 'django-insecure-CHANGE-THIS-IN-PRODUCTION'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# Frontend and Backend URLs
+FRONTEND_URL = 'https://www.mradvocates.in'
+FRONTEND_URL_ALT = 'https://mradvocates.in'
+BACKEND_URL = 'https://mradvocates.pythonanywhere.com'
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'mradvocates.pythonanywhere.com',
+    '.pythonanywhere.com',  # Allows all subdomains
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -84,6 +94,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    FRONTEND_URL,
+    FRONTEND_URL_ALT,
+]
+
+# CORS Additional Settings
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 # REST Framework Settings
