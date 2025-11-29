@@ -1,0 +1,15 @@
+# robots.txt for M.R. Advocates and Associates
+# https://www.mradvocates.in
+
+User-agent: *
+Allow: /
+
+# Disallow admin portal
+Disallow: /secret-admin-portal-2024/
+
+# Sitemap
+Sitemap: https://www.mradvocates.in/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
+

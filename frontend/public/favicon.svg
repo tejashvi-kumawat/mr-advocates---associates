@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a961;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4b876;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle with dark theme -->
+  <circle cx="50" cy="50" r="48" fill="#1a2332"/>
+  
+  <!-- Scale of Justice Icon -->
+  <g transform="translate(50, 50)">
+    <!-- Central pillar/base -->
+    <rect x="-2.5" y="18" width="5" height="18" fill="url(#goldGradient)" rx="2.5"/>
+    
+    <!-- Horizontal beam -->
+    <line x1="-20" y1="18" x2="20" y2="18" stroke="url(#goldGradient)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Left scale pan -->
+    <g transform="translate(-20, 18)">
+      <!-- Pan chain/rope -->
+      <line x1="0" y1="0" x2="0" y2="8" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Pan -->
+      <ellipse cx="0" cy="12" rx="10" ry="3.5" fill="url(#goldGradient)" opacity="0.95"/>
+      <ellipse cx="0" cy="9" rx="8" ry="2.5" fill="url(#goldGradient)"/>
+      <!-- Pan details -->
+      <line x1="-10" y1="12" x2="10" y2="12" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-7" y1="8" x2="-7" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="8" x2="0" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="7" y1="8" x2="7" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Right scale pan -->
+    <g transform="translate(20, 18)">
+      <!-- Pan chain/rope -->
+      <line x1="0" y1="0" x2="0" y2="8" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Pan -->
+      <ellipse cx="0" cy="12" rx="10" ry="3.5" fill="url(#goldGradient)" opacity="0.95"/>
+      <ellipse cx="0" cy="9" rx="8" ry="2.5" fill="url(#goldGradient)"/>
+      <!-- Pan details -->
+      <line x1="-10" y1="12" x2="10" y2="12" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-7" y1="8" x2="-7" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="8" x2="0" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="7" y1="8" x2="7" y2="16" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Top decorative element -->
+    <circle cx="0" cy="18" r="3" fill="url(#goldGradient)"/>
+  </g>
+  
+  <!-- Outer decorative ring -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" opacity="0.4"/>
+</svg>

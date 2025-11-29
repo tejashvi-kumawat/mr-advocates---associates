@@ -1,0 +1,25 @@
+/* FAQ Styles */
+
+.faq-card {
+  border: 2px solid var(--color-border) !important;
+  background: var(--color-bg);
+  transition: all var(--transition-base);
+}
+
+.faq-card:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.15);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .faq-card {
+  border: 2px solid rgba(212, 184, 118, 0.3) !important;
+  background: rgba(15, 20, 25, 0.6);
+}
+
+[data-theme="dark"] .faq-card:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 4px 12px rgba(212, 184, 118, 0.25);
+  background: rgba(15, 20, 25, 0.8);
+}
+
