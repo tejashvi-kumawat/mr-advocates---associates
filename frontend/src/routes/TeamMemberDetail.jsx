@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function TeamMemberDetail() {
   const { slug } = useParams()
@@ -22,6 +23,18 @@ function TeamMemberDetail() {
       setLoading(false)
     }
   }
+
+  // SEO Optimization
+  useSEO(member ? {
+    title: `${member.name} - ${member.role.replace(/_/g, ' ')} | M.R. Advocates`,
+    description: `Meet ${member.name}, ${member.role.replace(/_/g, ' ')} at M.R. Advocates Jaipur. Specializing in ${member.specialization}. Expert lawyer with years of experience.`,
+    keywords: `${member.name} lawyer Jaipur, ${member.specialization} lawyer, expert advocate Rajasthan, ${member.role.replace(/_/g, ' ')}`,
+    canonical: `https://www.mradvocates.in/team/${slug}`
+  } : {
+    title: 'Team Member | M.R. Advocates Jaipur',
+    description: 'Expert lawyers and advocates in Jaipur',
+    canonical: `https://www.mradvocates.in/team/${slug}`
+  })
 
   const getInitials = (name) => {
     return name.split(' ').map(word => word[0]).join('').substring(0, 2)
@@ -57,7 +70,7 @@ function TeamMemberDetail() {
             {member.image_url ? (
               <img 
                 src={member.image_url} 
-                alt={member.name} 
+                alt={`${member.name} - ${member.role.replace(/_/g, ' ')} at M.R. Advocates Jaipur`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} 
               />
             ) : (
@@ -170,9 +183,12 @@ function TeamMemberDetail() {
               borderRadius: 'var(--border-radius-lg)',
               border: '1px solid var(--color-border)'
             }}>
-              <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>Areas of Expertise</h3>
+              <h2 style={{ marginBottom: 'var(--spacing-sm)' }}>Areas of Expertise</h2>
               <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
                 {member.specialization}
+              </p>
+              <p style={{ fontSize: 'var(--font-size-small)', marginBottom: 'var(--spacing-md)' }}>
+                Need legal assistance? <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Explore our practice areas</Link> or contact us for consultation.
               </p>
               <Link to="/enquiry" className="btn btn-primary">
                 Request Consultation

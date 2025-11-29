@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function Enquiry() {
+  // SEO Optimization
+  useSEO({
+    title: 'Legal Enquiry | Contact Lawyers | M.R. Advocates',
+    description: 'Submit your legal enquiry to M.R. Advocates Jaipur. Get expert legal consultation for civil, criminal, corporate, family law matters. Quick response within 24 hours.',
+    keywords: 'legal enquiry Jaipur, contact lawyers, legal consultation, submit enquiry, law firm contact',
+    canonical: 'https://www.mradvocates.in/enquiry'
+  })
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -80,9 +90,9 @@ function Enquiry() {
   return (
     <section className="section">
       <div className="container" style={{ maxWidth: '700px' }}>
-        <h1 className="section-title">Submit an Enquiry</h1>
+        <h1 className="section-title">Submit Your Legal Enquiry</h1>
         <p style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-          Fill out the form below and our team will get back to you within 24 hours.
+          Fill out the form below and our expert lawyers in Jaipur will get back to you within 24 hours. Need immediate assistance? <Link to="/contact" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Contact us directly</Link> or explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link>.
         </p>
 
         {submitStatus && (

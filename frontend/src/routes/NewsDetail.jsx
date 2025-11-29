@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function NewsDetail() {
   const { slug } = useParams()
@@ -23,6 +24,18 @@ function NewsDetail() {
     }
   }
 
+  // SEO Optimization
+  useSEO(article ? {
+    title: `${article.title} | Legal News | M.R. Advocates`,
+    description: article.summary || `${article.title} - Latest legal news and updates from M.R. Advocates Jaipur. Expert insights on ${article.category} law.`,
+    keywords: `${article.category} law news, legal updates Jaipur, ${article.title}, Indian law news, legal articles`,
+    canonical: `https://www.mradvocates.in/legal-news/${slug}`
+  } : {
+    title: 'Legal News | M.R. Advocates Jaipur',
+    description: 'Latest legal news and updates from Jaipur',
+    canonical: `https://www.mradvocates.in/legal-news/${slug}`
+  })
+
   if (loading) return <div className="loading">Loading article...</div>
   if (notFound) return <Navigate to="/legal-news" replace />
 
@@ -36,7 +49,7 @@ function NewsDetail() {
         {article.image_url && (
           <img 
             src={article.image_url} 
-            alt={article.title}
+            alt={`${article.title} - Legal News Article from M.R. Advocates Jaipur`}
             style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: 'var(--border-radius-lg)', marginBottom: 'var(--spacing-lg)' }}
           />
         )}
@@ -68,8 +81,8 @@ function NewsDetail() {
         )}
         
         <div style={{ marginTop: 'var(--spacing-xl)', padding: 'var(--spacing-lg)', backgroundColor: 'var(--color-bg-alt)', borderRadius: 'var(--border-radius-lg)' }}>
-          <h3>Need Legal Assistance?</h3>
-          <p>If you have questions about this legal matter or require professional representation, our experienced advocates are here to help.</p>
+          <h2>Need Legal Assistance?</h2>
+          <p>If you have questions about this legal matter or require professional representation, our experienced lawyers in Jaipur are here to help. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/services" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>legal services</Link>.</p>
           <Link to="/enquiry" className="btn btn-primary">Contact Us</Link>
         </div>
       </div>

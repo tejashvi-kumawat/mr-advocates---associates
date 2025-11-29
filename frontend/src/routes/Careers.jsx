@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Target, Users, Scale } from 'lucide-react'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function Careers() {
+  // SEO Optimization
+  useSEO({
+    title: 'Legal Careers | Join Our Team | M.R. Advocates',
+    description: 'Join M.R. Advocates law firm in Jaipur. Career opportunities for lawyers, associates, and legal professionals. Apply now for legal positions.',
+    keywords: 'legal careers Jaipur, lawyer jobs Rajasthan, law firm careers, legal associate jobs, advocate positions',
+    canonical: 'https://www.mradvocates.in/careers'
+  })
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -103,9 +113,9 @@ function Careers() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Join Our Team</h1>
+        <h1 className="section-title">Join Our Legal Team in Jaipur</h1>
         <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-xl)' }}>
-          We're always looking for talented and passionate legal professionals to join our team. If you're committed to excellence and want to make a difference, we'd love to hear from you.
+          We're always looking for talented and passionate legal professionals to join our law firm in Jaipur. If you're committed to excellence and want to make a difference in the legal field, we'd love to hear from you. Learn more about our <Link to="/about" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>firm</Link> and <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>team</Link>.
         </p>
 
         <div className="grid grid-3" style={{ marginBottom: 'var(--spacing-2xl)' }}>
@@ -133,7 +143,7 @@ function Careers() {
         </div>
 
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>Apply Now</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>Apply for Legal Positions</h2>
 
           {submitStatus && (
             <div className={submitStatus.type} style={{ marginBottom: 'var(--spacing-lg)' }}>

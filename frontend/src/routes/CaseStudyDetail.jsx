@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { Target, Lightbulb, CheckCircle } from 'lucide-react'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function CaseStudyDetail() {
   const { slug } = useParams()
@@ -24,6 +25,18 @@ function CaseStudyDetail() {
     }
   }
 
+  // SEO Optimization
+  useSEO(caseStudy ? {
+    title: `${caseStudy.title} | Case Study | M.R. Advocates`,
+    description: `Success story: ${caseStudy.title}. Learn how M.R. Advocates achieved favorable outcomes in ${caseStudy.practice_area_name || 'legal'} matters in Jaipur.`,
+    keywords: `${caseStudy.title} case study, legal success story Jaipur, ${caseStudy.practice_area_name} lawyer, case study Rajasthan`,
+    canonical: `https://www.mradvocates.in/case-studies/${slug}`
+  } : {
+    title: 'Case Study | M.R. Advocates Jaipur',
+    description: 'Legal case studies and success stories from Jaipur',
+    canonical: `https://www.mradvocates.in/case-studies/${slug}`
+  })
+
   if (loading) return <div className="loading">Loading case study...</div>
   if (notFound) return <Navigate to="/case-studies" replace />
 
@@ -37,7 +50,7 @@ function CaseStudyDetail() {
         {caseStudy.image_url && (
           <img 
             src={caseStudy.image_url} 
-            alt={caseStudy.title}
+            alt={`${caseStudy.title} - Legal Case Study from M.R. Advocates Jaipur`}
             style={{ 
               width: '100%', 
               height: '400px', 
@@ -165,9 +178,9 @@ function CaseStudyDetail() {
           borderRadius: 'var(--border-radius-lg)',
           textAlign: 'center'
         }}>
-          <h3 style={{ marginBottom: 'var(--spacing-md)' }}>Need Similar Legal Assistance?</h3>
+          <h2 style={{ marginBottom: 'var(--spacing-md)' }}>Need Similar Legal Assistance?</h2>
           <p style={{ marginBottom: 'var(--spacing-lg)', color: 'var(--color-text-secondary)' }}>
-            Our experienced team is ready to help you navigate complex legal challenges and achieve favorable outcomes.
+            Our experienced lawyers in Jaipur are ready to help you navigate complex legal challenges and achieve favorable outcomes. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>meet our expert team</Link>.
           </p>
           <div style={{ display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/enquiry" className="btn btn-primary">Contact Us</Link>

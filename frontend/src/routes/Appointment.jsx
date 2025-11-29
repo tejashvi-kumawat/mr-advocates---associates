@@ -1,8 +1,18 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FileText } from 'lucide-react'
 import api from '../services/api'
+import { useSEO } from '../hooks/useSEO'
 
 function Appointment() {
+  // SEO Optimization
+  useSEO({
+    title: 'Book Legal Consultation | Appointment | M.R. Advocates',
+    description: 'Book an appointment with expert lawyers in Jaipur. Schedule legal consultation for civil, criminal, corporate, family law matters. Confirmation within 24 hours.',
+    keywords: 'book lawyer appointment Jaipur, legal consultation booking, schedule appointment, lawyer consultation Rajasthan',
+    canonical: 'https://www.mradvocates.in/appointment'
+  })
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -88,9 +98,9 @@ function Appointment() {
   return (
     <section className="section">
       <div className="container" style={{ maxWidth: '700px' }}>
-        <h1 className="section-title">Book an Appointment</h1>
+        <h1 className="section-title">Book Legal Consultation Appointment</h1>
         <p style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-          Schedule a consultation with our experienced advocates. We'll confirm your appointment within 24 hours.
+          Schedule a consultation with our experienced lawyers in Jaipur. We'll confirm your appointment within 24 hours. Learn about our <Link to="/services" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>legal services</Link> or <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>meet our team</Link>.
         </p>
 
         {submitStatus && (

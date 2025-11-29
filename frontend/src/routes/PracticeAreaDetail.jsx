@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import api from '../services/api'
 import Icon from '../components/Icon'
+import { useSEO } from '../hooks/useSEO'
 
 function PracticeAreaDetail() {
   const { slug } = useParams()
@@ -23,6 +24,18 @@ function PracticeAreaDetail() {
       setLoading(false)
     }
   }
+
+  // SEO Optimization
+  useSEO(area ? {
+    title: `${area.title} Lawyer in Jaipur | M.R. Advocates`,
+    description: `Expert ${area.title} legal services in Jaipur, Rajasthan. Our experienced lawyers provide comprehensive legal solutions for ${area.title.toLowerCase()} matters.`,
+    keywords: `${area.title} lawyer Jaipur, ${area.title} advocate Rajasthan, ${area.title} legal services, best ${area.title} lawyer`,
+    canonical: `https://www.mradvocates.in/practice-areas/${slug}`
+  } : {
+    title: 'Practice Area | M.R. Advocates Jaipur',
+    description: 'Expert legal services in Jaipur, Rajasthan',
+    canonical: `https://www.mradvocates.in/practice-areas/${slug}`
+  })
 
   if (loading) return <div className="loading">Loading...</div>
   if (notFound) return <Navigate to="/practice-areas" replace />
@@ -62,8 +75,8 @@ function PracticeAreaDetail() {
         </div>
         
         <div style={{ marginTop: 'var(--spacing-xl)', padding: 'var(--spacing-lg)', backgroundColor: 'var(--color-bg-alt)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center' }}>
-          <h3>Need Legal Assistance in {area.title}?</h3>
-          <p>Our experienced advocates are here to help you with your legal matters.</p>
+          <h2>Need Legal Assistance in {area.title}?</h2>
+          <p>Our experienced {area.title.toLowerCase()} lawyers in Jaipur are here to help you with your legal matters. Explore our <Link to="/services" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>legal services</Link> or <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>meet our expert team</Link>.</p>
           <div style={{ display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center', marginTop: 'var(--spacing-md)' }}>
             <Link to="/enquiry" className="btn btn-primary">Contact Us</Link>
             <Link to="/appointment" className="btn btn-secondary">Book Appointment</Link>
