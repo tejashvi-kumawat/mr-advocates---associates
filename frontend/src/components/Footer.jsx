@@ -123,10 +123,10 @@ function Footer() {
               Tantyawas, Jaipur, Rajasthan, India
             </p>
             <p>
-              <strong>Phone:</strong> +91 9782828393<br />
-              <strong>Phone:</strong> +91 9887555345<br />
-              <strong>Phone:</strong> +91 9799548126<br />
-              <strong>Email:</strong> rakeshkumawat17011980@gmail.com
+              <strong>Phone:</strong><a href='tel:+919782828393'> +91 9782828393</a><br />
+              <strong>Phone:</strong><a href='tel:+919887555345'> +91 9887555345</a><br />
+              <strong>Phone:</strong><a href='tel:+919799548126'> +91 9799548126</a><br />
+              <strong>Email:</strong><a href='mailto:rakeshkumawat17011980@gmail.com'> rakeshkumawat17011980@gmail.com</a>
             </p>
             <p>
               <strong>Hours:</strong><br />
