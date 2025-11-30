@@ -70,8 +70,7 @@ function Contact() {
               </div>
               <div className="contact-info-content">
                 <h4>Email</h4>
-                <p>info@mradvocates.in</p>
-                <p>enquiry@mradvocates.in</p>
+                <a href='mailto:rakeshkumawat17011980@gmail.com'>rakeshkumawat17011980@gmail.com</a>
               </div>
             </div>
             
