@@ -58,9 +58,9 @@ function Contact() {
               </div>
               <div className="contact-info-content">
                 <h4>Phone</h4>
-                <a href='tel:+919782828393'>Phone: +91 9782828393</a>
-                <a href='tel:+919887555345'>Phone: +91 9887555345</a>
-                <a href='tel:+919799548126'>Phone: +91 9799548126</a>
+                <a href='tel:+919782828393'>Phone: +91 9782828393</a> <br />
+                <a href='tel:+919887555345'>Phone: +91 9887555345</a> <br />
+                <a href='tel:+919799548126'>Phone: +91 9799548126</a> <br />
               </div>
             </div>
             
@@ -70,7 +70,7 @@ function Contact() {
               </div>
               <div className="contact-info-content">
                 <h4>Email</h4>
-                <a href='mailto:rakeshkumawat17011980@gmail.com'>rakeshkumawat17011980@gmail.com</a>
+                <a href='mailto:rakeshkumawat17011980@gmail.com'>rakeshkumawat17011980@gmail.com</a> <br />
               </div>
             </div>
             
