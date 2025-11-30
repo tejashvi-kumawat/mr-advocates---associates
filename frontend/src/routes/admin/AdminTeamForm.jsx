@@ -89,7 +89,16 @@ function AdminTeamForm() {
 
       navigate('/secret-admin-portal-2024/team')
     } catch (err) {
-      setError(err.message)
+      // Better error handling
+      if (err.message && err.message.includes('Session expired')) {
+        setError('Your session has expired. Please login again.')
+      } else if (err.response?.status === 401) {
+        setError('Unauthorized. Please check if you are logged in as an admin user.')
+      } else if (err.response?.status === 403) {
+        setError('Access denied. You do not have permission to perform this action.')
+      } else {
+        setError(err.message || 'Failed to save team member. Please try again.')
+      }
     } finally {
       setLoading(false)
     }
