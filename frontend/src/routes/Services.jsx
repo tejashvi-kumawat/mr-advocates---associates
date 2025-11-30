@@ -10,9 +10,9 @@ function Services() {
 
   // SEO Optimization
   useSEO({
-    title: 'Legal Services in Jaipur | M.R. Advocates',
-    description: 'Comprehensive legal services in Jaipur: litigation, documentation, advisory, ADR, compliance. Expert lawyers for all your legal needs.',
-    keywords: 'legal services Jaipur, litigation services, legal documentation, legal advisory, ADR services, compliance services Rajasthan',
+    title: 'Best Legal Services in Jaipur | Expert Lawyer Firm | M.R. Advocates',
+    description: 'Best advocate firm in Jaipur offering comprehensive legal services: litigation, documentation, advisory, ADR, compliance. Expert lawyers including civil case expert, criminal case expert, corporate case expert, and revenue case expert.',
+    keywords: 'best legal services jaipur, advocate firm services, lawyer firm services, expert legal services, civil case expert, criminal case expert, corporate case expert, revenue case expert, property case expert, family case expert, litigation expert, legal consultation expert',
     canonical: 'https://www.mradvocates.in/services'
   })
 
@@ -36,9 +36,9 @@ function Services() {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Our Legal Services in Jaipur</h1>
+        <h1 className="section-title">Best Legal Services in Jaipur - Expert Lawyer Firm</h1>
         <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-xl)' }}>
-          We provide comprehensive legal services in Jaipur tailored to meet your specific needs. Our experienced lawyers and advocates are committed to delivering excellence in litigation, documentation, legal advisory, alternative dispute resolution (ADR), and compliance services. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/contact" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>contact us</Link> for expert legal consultation.
+          As one of the <strong>best advocate firms in Jaipur</strong> and among the <strong>best advocates in India</strong>, we provide comprehensive legal services tailored to meet your specific needs. Our <strong>expert lawyers</strong> include <strong>civil case experts</strong>, <strong>criminal case experts</strong>, <strong>corporate case experts</strong>, <strong>family case experts</strong>, <strong>property case experts</strong>, and <strong>revenue case experts</strong>. We are committed to delivering excellence in litigation, documentation, legal advisory, alternative dispute resolution (ADR), and compliance services. Explore our <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>practice areas</Link> or <Link to="/contact" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>contact us</Link> for expert legal consultation.
         </p>
         <div className="grid grid-3">
           {services.map((service, index) => {

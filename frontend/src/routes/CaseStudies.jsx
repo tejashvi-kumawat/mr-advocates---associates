@@ -9,9 +9,9 @@ function CaseStudies() {
 
   // SEO Optimization
   useSEO({
-    title: 'Legal Case Studies | Success Stories | Jaipur Lawyers',
-    description: 'Explore successful legal case studies from M.R. Advocates Jaipur. Real cases showcasing our expertise in civil, criminal, and corporate law.',
-    keywords: 'legal case studies Jaipur, successful cases, law firm success stories, legal victories Rajasthan',
+    title: 'Legal Case Studies | Best Advocates in Jaipur | Success Stories',
+    description: 'Explore successful legal case studies from best advocate firm in Jaipur. Real cases showcasing expertise of best lawyers in India including civil case expert, criminal case expert, corporate case expert, and revenue case expert.',
+    keywords: 'legal case studies best advocates jaipur, best lawyers success stories, advocate firm case studies, lawyer firm victories, civil case expert success, revenue case expert cases, top law firm india',
     canonical: 'https://www.mradvocates.in/case-studies'
   })
 

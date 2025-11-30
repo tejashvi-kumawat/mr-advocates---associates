@@ -10,9 +10,9 @@ function FAQ() {
 
   // SEO Optimization
   useSEO({
-    title: 'Legal FAQ | Common Questions Answered | Jaipur Lawyers',
-    description: 'Frequently asked questions about legal services in Jaipur. Get answers about our law firm, legal processes, and how we can help you.',
-    keywords: 'legal FAQ Jaipur, law firm questions, legal consultation FAQ, lawyers FAQ Rajasthan',
+    title: 'Legal FAQ | Best Advocates in Jaipur | Best Lawyers in India',
+    description: 'Frequently asked questions about best advocate firm in Jaipur. Get answers about best lawyers in India, legal processes, civil case expert, criminal case expert, and how we can help you.',
+    keywords: 'legal FAQ best advocates jaipur, best lawyers FAQ, advocate firm questions, lawyer firm FAQ, civil case expert FAQ, revenue case expert FAQ, legal consultation expert',
     canonical: 'https://www.mradvocates.in/faq'
   })
 

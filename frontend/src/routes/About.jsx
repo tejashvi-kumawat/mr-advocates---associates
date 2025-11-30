@@ -9,9 +9,9 @@ function About() {
 
   // SEO Optimization
   useSEO({
-    title: 'About Us | Best Law Firm in Jaipur, Rajasthan',
-    description: 'M.R. Advocates and Associates - Leading law firm in Jaipur with 25+ years of legal excellence. Expert lawyers providing comprehensive legal services.',
-    keywords: 'about law firm Jaipur, legal services Rajasthan, experienced lawyers Jaipur, law firm history, legal expertise',
+    title: 'About Best Advocate Firm in Jaipur | Best Lawyers in India',
+    description: 'M.R. Advocates and Associates - Best advocate firm in Jaipur, Rajasthan with 25+ years of legal excellence. Top lawyers in India providing comprehensive legal services including civil case expert, criminal case expert, corporate case expert, and revenue case expert.',
+    keywords: 'best advocate firm jaipur, best lawyers in india, best advocates in rajasthan, lawyer firm history, expert advocates, top law firm, leading advocate firm, experienced lawyers, legal expertise, civil case expert, revenue case expert',
     canonical: 'https://www.mradvocates.in/about'
   })
 
@@ -20,9 +20,9 @@ function About() {
       <section className="section" ref={overviewRef}>
         <div className="container">
           <div className={`fade-in ${overviewVisible ? 'visible' : ''}`}>
-            <h1 className="section-title">About M.R. Advocates and Associates</h1>
+            <h1 className="section-title">About Best Advocate Firm in Jaipur - Best Lawyers in India</h1>
             <p style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', fontSize: 'var(--font-size-body)', lineHeight: '1.8' }}>
-              M.R. Advocates and Associates is a premier law firm in Jaipur, Rajasthan, established with a vision to provide exemplary legal services rooted in integrity, professionalism, and client-centric approach. Our experienced lawyers in Jaipur have grown to become a trusted name in the legal community, serving individuals, businesses, and organizations across diverse legal domains including civil law, criminal law, corporate law, and family law.
+              M.R. Advocates and Associates is recognized as one of the <strong>best advocate firms in Jaipur</strong> and among the <strong>best advocates in India</strong>. Established with a vision to provide exemplary legal services rooted in integrity, professionalism, and client-centric approach, our <strong>expert lawyers</strong> have grown to become a trusted name in the legal community. As a premier <strong>lawyer firm</strong> in Rajasthan, we serve individuals, businesses, and organizations across diverse legal domains. Our team includes <strong>civil case experts</strong>, <strong>criminal case experts</strong>, <strong>corporate case experts</strong>, <strong>family case experts</strong>, <strong>property case experts</strong>, and <strong>revenue case experts</strong>.
             </p>
             <div style={{ textAlign: 'center', marginTop: 'var(--spacing-lg)' }}>
               <Link to="/practice-areas" className="btn btn-secondary" style={{ marginRight: 'var(--spacing-sm)' }}>Our Practice Areas</Link>

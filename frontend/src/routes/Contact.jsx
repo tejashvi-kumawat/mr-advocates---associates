@@ -6,16 +6,16 @@ import { useSEO } from '../hooks/useSEO'
 function Contact() {
   // SEO Optimization
   useSEO({
-    title: 'Contact Best Lawyers in Jaipur | M.R. Advocates',
-    description: 'Contact our law firm in Jaipur, Rajasthan. Get expert legal consultation. Phone: +91-9782828393. Email: info@mradvocates.in',
-    keywords: 'contact lawyers Jaipur, law firm contact, legal consultation Jaipur, lawyer phone number Rajasthan',
+    title: 'Contact Best Advocates in Jaipur | Best Lawyer Firm | M.R. Advocates & Associates',
+    description: 'Contact best advocate firm in Jaipur, Rajasthan. Get expert legal consultation from top lawyers in India. Phone: +91-9782828393. Email: info@mradvocates.in',
+    keywords: 'contact best advocates jaipur, contact best lawyers india, advocate firm contact, lawyer firm contact, legal consultation expert, best law firm contact, top advocate firm jaipur',
     canonical: 'https://www.mradvocates.in/contact'
   })
 
   return (
     <section className="section">
       <div className="container">
-        <h1 className="section-title">Contact Our Law Firm in Jaipur</h1>
+        <h1 className="section-title">Contact Best Advocate Firm in Jaipur - Best Lawyers in India</h1>
         
         <div className="grid grid-2" style={{ gap: 'var(--spacing-2xl)' }}>
           <div className="contact-info">

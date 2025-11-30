@@ -10,9 +10,9 @@ function Team() {
 
   // SEO Optimization
   useSEO({
-    title: 'Expert Lawyers Team | M.R. Advocates Jaipur',
-    description: 'Meet our experienced team of lawyers and advocates in Jaipur. Expert legal professionals specializing in civil, criminal, corporate, and family law.',
-    keywords: 'lawyers team Jaipur, expert advocates Rajasthan, legal professionals, senior lawyers, law firm team',
+    title: 'Best Lawyers Team in Jaipur | Expert Advocates | M.R. Advocates',
+    description: 'Meet our experienced team of best lawyers and advocates in Jaipur, India. Expert legal professionals including civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, and revenue case expert.',
+    keywords: 'best lawyers team jaipur, expert advocates team, best lawyers in india, civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, revenue case expert, top lawyer firm team, best advocate firm team',
     canonical: 'https://www.mradvocates.in/team'
   })
 
@@ -52,14 +52,16 @@ function Team() {
       <section className="team-section">
         <div className="container">
           <div className="team-header">
-            <h1 className="team-page-title">Our Expert Legal Team in Jaipur</h1>
+            <h1 className="team-page-title">Best Lawyers Team in Jaipur - Expert Advocates</h1>
             <p className="team-page-subtitle">
-              Our team of experienced lawyers and advocates in Jaipur brings decades of combined legal expertise, 
-              dedicated to serving our clients with integrity and excellence across all practice areas including 
-              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> civil law</Link>, 
-              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> criminal law</Link>, 
-              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> corporate law</Link>, and 
-              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> family law</Link>.
+              Our team of <strong>best lawyers</strong> and <strong>expert advocates</strong> in Jaipur brings decades of combined legal expertise, 
+              dedicated to serving our clients with integrity and excellence. As one of the <strong>best advocate firms in Jaipur</strong> and among the <strong>best advocates in India</strong>, we specialize across all practice areas including 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> civil case expert</Link>, 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> criminal case expert</Link>, 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> corporate case expert</Link>, 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> family case expert</Link>, 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> property case expert</Link>, and 
+              <Link to="/practice-areas" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}> revenue case expert</Link>.
             </p>
           </div>
           

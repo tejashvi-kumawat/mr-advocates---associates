@@ -27,13 +27,13 @@ function PracticeAreaDetail() {
 
   // SEO Optimization
   useSEO(area ? {
-    title: `${area.title} Lawyer in Jaipur | M.R. Advocates`,
-    description: `Expert ${area.title} legal services in Jaipur, Rajasthan. Our experienced lawyers provide comprehensive legal solutions for ${area.title.toLowerCase()} matters.`,
-    keywords: `${area.title} lawyer Jaipur, ${area.title} advocate Rajasthan, ${area.title} legal services, best ${area.title} lawyer`,
+    title: `${area.title} Case Expert in Jaipur | Best ${area.title} Lawyer | M.R. Advocates`,
+    description: `Best ${area.title.toLowerCase()} case expert in Jaipur, Rajasthan. Expert ${area.title} legal services from top lawyers in India. Comprehensive legal solutions for ${area.title.toLowerCase()} matters.`,
+    keywords: `${area.title.toLowerCase()} case expert, ${area.title} lawyer Jaipur, ${area.title} advocate Rajasthan, best ${area.title} lawyer, ${area.title} legal services, expert ${area.title} lawyer, top ${area.title} advocate, best advocates jaipur, best lawyers india`,
     canonical: `https://www.mradvocates.in/practice-areas/${slug}`
   } : {
-    title: 'Practice Area | M.R. Advocates Jaipur',
-    description: 'Expert legal services in Jaipur, Rajasthan',
+    title: 'Practice Area Expert | Best Advocates Jaipur | M.R. Advocates',
+    description: 'Expert legal services in Jaipur, Rajasthan from best advocates in India',
     canonical: `https://www.mradvocates.in/practice-areas/${slug}`
   })
 
@@ -75,8 +75,8 @@ function PracticeAreaDetail() {
         </div>
         
         <div style={{ marginTop: 'var(--spacing-xl)', padding: 'var(--spacing-lg)', backgroundColor: 'var(--color-bg-alt)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center' }}>
-          <h2>Need Legal Assistance in {area.title}?</h2>
-          <p>Our experienced {area.title.toLowerCase()} lawyers in Jaipur are here to help you with your legal matters. Explore our <Link to="/services" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>legal services</Link> or <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>meet our expert team</Link>.</p>
+          <h2>Need {area.title} Case Expert Assistance?</h2>
+          <p>As one of the <strong>best advocate firms in Jaipur</strong>, our experienced <strong>{area.title.toLowerCase()} case experts</strong> are here to help you with your legal matters. Our <strong>expert lawyers</strong> provide comprehensive legal solutions. Explore our <Link to="/services" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>legal services</Link> or <Link to="/team" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>meet our expert team</Link>.</p>
           <div style={{ display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center', marginTop: 'var(--spacing-md)' }}>
             <Link to="/enquiry" className="btn btn-primary">Contact Us</Link>
             <Link to="/appointment" className="btn btn-secondary">Book Appointment</Link>

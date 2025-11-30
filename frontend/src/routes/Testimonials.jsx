@@ -10,9 +10,9 @@ function Testimonials() {
 
   // SEO Optimization
   useSEO({
-    title: 'Client Testimonials | Reviews | M.R. Advocates Jaipur',
-    description: 'Read client testimonials and reviews about M.R. Advocates law firm in Jaipur. Real feedback from satisfied clients about our legal services.',
-    keywords: 'lawyer testimonials Jaipur, client reviews, law firm reviews Rajasthan, legal services feedback',
+    title: 'Client Testimonials | Best Advocates in Jaipur | Best Lawyers Reviews',
+    description: 'Read client testimonials and reviews about best advocate firm in Jaipur. Real feedback from satisfied clients about best lawyers in India, civil case expert, criminal case expert, and expert legal services.',
+    keywords: 'best advocates testimonials jaipur, best lawyers reviews, advocate firm testimonials, lawyer firm reviews, expert lawyers feedback, top law firm india reviews',
     canonical: 'https://www.mradvocates.in/testimonials'
   })
 
