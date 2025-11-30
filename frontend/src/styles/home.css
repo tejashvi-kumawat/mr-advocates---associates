@@ -2,18 +2,19 @@
 
 .home-3d {
   position: relative;
-
   background: var(--color-bg);
   min-height: 100vh;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   perspective: 1000px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* 3D Background Layers */
 .home-bg-3d {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -23,6 +24,7 @@
   overflow: hidden;
   background: var(--color-bg);
   transform-style: preserve-3d;
+  min-height: 100vh;
 }
 
 .home-bg-layer {

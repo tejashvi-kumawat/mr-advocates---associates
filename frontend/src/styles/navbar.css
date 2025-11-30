@@ -3,35 +3,40 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: var(--z-sticky);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all var(--transition-base);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(10, 12, 18, 0.95);
-  border-bottom-color: rgba(212, 184, 118, 0.25);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4),
-              0 0 0 1px rgba(212, 184, 118, 0.1);
+  background: rgba(10, 12, 18, 0.85);
+  border-bottom-color: rgba(212, 184, 118, 0.2);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(212, 184, 118, 0.08);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-bottom-color: rgba(201, 169, 97, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(201, 169, 97, 0.1);
+  padding: var(--spacing-xs) 0;
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: rgba(10, 12, 18, 0.98);
-  border-bottom-color: rgba(212, 184, 118, 0.35);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6),
+  background: rgba(10, 12, 18, 0.95);
+  border-bottom-color: rgba(212, 184, 118, 0.3);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5),
               0 0 0 1px rgba(212, 184, 118, 0.15),
-              0 0 30px rgba(212, 184, 118, 0.08);
+              0 0 20px rgba(212, 184, 118, 0.1);
 }
 
 .navbar-container {
@@ -41,6 +46,11 @@
   padding: var(--spacing-md) var(--container-padding);
   max-width: var(--container-width);
   margin: 0 auto;
+  transition: padding var(--transition-base);
+}
+
+.navbar.scrolled .navbar-container {
+  padding: var(--spacing-sm) var(--container-padding);
 }
 
 .navbar-brand {
@@ -52,8 +62,9 @@
   align-items: center;
   gap: var(--spacing-sm);
   line-height: 1.2;
-  transition: all var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  padding: var(--spacing-xs) 0;
 }
 
 .navbar-brand-icon {
@@ -113,16 +124,17 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-main);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
   position: relative;
-  transition: all var(--transition-fast);
-  border-radius: var(--border-radius-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--border-radius-md);
   background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  white-space: nowrap;
 }
 
 .navbar-link::before {

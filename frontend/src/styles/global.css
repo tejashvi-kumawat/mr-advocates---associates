@@ -10,6 +10,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -20,6 +21,8 @@ body {
   background-color: var(--color-bg);
   transition: background-color var(--transition-base), color var(--transition-base);
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Typography */
