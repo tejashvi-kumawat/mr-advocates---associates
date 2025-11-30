@@ -82,89 +82,89 @@ function AdminServicesForm() {
         <form onSubmit={handleSubmit} className="admin-form">
           <div className="form-section">
             <h3 className="form-section-title">Service Information</h3>
-            <div className="form-row">
-              <div className="form-group">
+          <div className="form-row">
+            <div className="form-group">
                 <label htmlFor="title" className="form-label required">Service Title</label>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  value={formData.title}
-                  onChange={handleChange}
-                  className="form-input"
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                className="form-input"
                   placeholder="Enter service title"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="category" className="form-label required">Category</label>
-                <select
-                  id="category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  className="form-select"
-                  required
-                >
-                  {categories.map(cat => (
-                    <option key={cat.value} value={cat.value}>{cat.label}</option>
-                  ))}
-                </select>
-              </div>
+                required
+              />
             </div>
 
-            <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="category" className="form-label required">Category</label>
+              <select
+                id="category"
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                className="form-select"
+                required
+              >
+                {categories.map(cat => (
+                  <option key={cat.value} value={cat.value}>{cat.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="form-row">
               <IconPicker
                 value={formData.icon}
                 onChange={handleChange}
                 label="Icon"
               />
 
-              <div className="form-group">
-                <label htmlFor="order" className="form-label">Display Order</label>
-                <input
-                  type="number"
-                  id="order"
-                  name="order"
-                  value={formData.order}
-                  onChange={handleChange}
-                  className="form-input"
+            <div className="form-group">
+              <label htmlFor="order" className="form-label">Display Order</label>
+              <input
+                type="number"
+                id="order"
+                name="order"
+                value={formData.order}
+                onChange={handleChange}
+                className="form-input"
                   placeholder="0"
                   min="0"
-                />
-                <span className="form-help">Lower numbers appear first</span>
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="description" className="form-label required">Description</label>
-              <textarea
-                id="description"
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                className="form-textarea"
-                rows="4"
-                placeholder="Brief description of the service..."
-                required
               />
+                <span className="form-help">Lower numbers appear first</span>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="description" className="form-label required">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className="form-textarea"
+              rows="4"
+                placeholder="Brief description of the service..."
+              required
+            />
             </div>
           </div>
 
           <div className="form-section">
             <h3 className="form-section-title">Detailed Content</h3>
-            <div className="form-group">
+          <div className="form-group">
               <label htmlFor="full_content" className="form-label">Full Content</label>
-              <textarea
-                id="full_content"
-                name="full_content"
-                value={formData.full_content}
-                onChange={handleChange}
-                className="form-textarea"
-                rows="8"
+            <textarea
+              id="full_content"
+              name="full_content"
+              value={formData.full_content}
+              onChange={handleChange}
+              className="form-textarea"
+              rows="8"
                 placeholder="Detailed information about this service (optional)..."
-              />
+            />
               <span className="form-help">This content will be displayed on the service detail page</span>
             </div>
           </div>
@@ -181,7 +181,7 @@ function AdminServicesForm() {
               />
               <label htmlFor="is_active" className="form-checkbox-label">
                 Make this service visible on the website
-              </label>
+            </label>
             </div>
           </div>
 
