@@ -29,10 +29,26 @@ function Contact() {
                 <h4>Office Address</h4>
                 <p>
                   M.R. Advocates and Associates<br />
-                  Civil Lines<br />
-                  Jaipur, Rajasthan 302006<br />
+                  Jaipur, Rajasthan<br />
                   India
                 </p>
+                <a 
+                  href="https://maps.app.goo.gl/Ak53oHoddHGhCJTV8?g_st=aw" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    color: 'var(--color-accent)', 
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 'var(--spacing-xs)',
+                    marginTop: 'var(--spacing-xs)',
+                    fontSize: 'var(--font-size-small)'
+                  }}
+                >
+                  <Map size={16} />
+                  <span>View on Google Maps</span>
+                </a>
               </div>
             </div>
             
@@ -91,19 +107,40 @@ function Contact() {
             <div style={{ 
               marginTop: 'var(--spacing-xl)',
               width: '100%', 
-              height: '300px', 
-              backgroundColor: 'var(--color-bg-alt)', 
+              height: '400px', 
               borderRadius: 'var(--border-radius-lg)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid var(--color-border)'
+              overflow: 'hidden',
+              border: '2px solid var(--color-border)',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
             }}>
-              <p style={{ color: 'var(--color-text-secondary)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacing-xs)' }}>
-                <Map size={32} opacity={0.5} />
-                <span>Map Placeholder</span>
-                <small>Embed Google Maps iframe here</small>
-              </p>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.747455!3d27.074699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDA0JzI4LjkiTiA3NcKwNDQnNTAuOCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="M.R. Advocates and Associates Location"
+              ></iframe>
+            </div>
+            <div style={{ marginTop: 'var(--spacing-md)', textAlign: 'center' }}>
+              <a 
+                href="https://maps.app.goo.gl/Ak53oHoddHGhCJTV8?g_st=aw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  color: 'var(--color-accent)', 
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--spacing-xs)',
+                  fontSize: 'var(--font-size-small)'
+                }}
+              >
+                <Map size={16} />
+                <span>Open in Google Maps</span>
+              </a>
             </div>
           </div>
         </div>
