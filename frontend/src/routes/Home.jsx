@@ -42,17 +42,79 @@ function Home() {
   }, [])
 
   useEffect(() => {
+    // Enhanced scroll effects
+    const handleScroll = () => {
+      const scrolled = window.scrollY
+      const parallaxElements = document.querySelectorAll('.parallax-element')
+      
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.speed || 0.5
+        const yPos = -(scrolled * speed)
+        element.style.transform = `translateY(${yPos}px)`
+      })
+
+      // Parallax for hero
+      const hero = document.querySelector('.hero-section')
+      if (hero) {
+        const heroOffset = scrolled * 0.3
+        hero.style.transform = `translateY(${heroOffset}px)`
+        hero.style.opacity = 1 - (scrolled / 800)
+      }
+
+      // Scroll progress indicator
+      const scrollProgress = (scrolled / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      document.documentElement.style.setProperty('--scroll-progress', `${scrollProgress}%`)
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: [0, 0.1, 0.3, 0.5],
+      rootMargin: '0px 0px -100px 0px'
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const element = entry.target
+        const ratio = entry.intersectionRatio
+        
         if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-visible')
+          element.classList.add('fade-in-visible')
+          
+          // Staggered animation based on scroll position
+          const delay = element.dataset.delay || 0
+          setTimeout(() => {
+            element.style.opacity = '1'
+            element.style.transform = 'translateY(0)'
+          }, delay)
+        }
+
+        // Parallax effect based on scroll position
+        if (ratio > 0 && ratio < 1) {
+          const scrollY = window.scrollY
+          const elementTop = element.getBoundingClientRect().top + scrollY
+          const elementHeight = element.offsetHeight
+          const scrollProgress = (scrollY - elementTop + window.innerHeight) / (elementHeight + window.innerHeight)
+          
+          if (scrollProgress > 0 && scrollProgress < 1) {
+            const parallax = (scrollProgress - 0.5) * 50
+            element.style.transform = `translateY(${parallax}px)`
+          }
         }
       })
-    }, { threshold: 0.1 })
+    }, observerOptions)
 
     const sections = document.querySelectorAll('.fade-in-section')
-    sections.forEach(section => observer.observe(section))
-    return () => sections.forEach(section => observer.unobserve(section))
+    sections.forEach((section, index) => {
+      section.dataset.delay = index * 100
+      observer.observe(section)
+    })
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      sections.forEach(section => observer.unobserve(section))
+    }
   }, [])
 
   const fetchHomeData = async () => {
