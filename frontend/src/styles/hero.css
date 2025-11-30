@@ -7,10 +7,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: var(--color-gradient-hero);
+  overflow: visible;
+  background: transparent;
   color: var(--color-bg-light);
   padding: var(--spacing-2xl) 0;
+  z-index: 1;
 }
 
 /* Subtle Background Elements */
