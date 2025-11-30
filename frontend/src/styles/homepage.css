@@ -182,7 +182,7 @@
 /* Stats Section */
 .stats-section {
   padding: 6rem 0;
-  background: var(--color-bg-alt);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -213,6 +213,24 @@
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-icon svg {
+  transform: translateZ(0);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 8px rgba(201, 169, 97, 0.3));
+}
+
+.stat-card:hover .stat-icon {
+  transform: rotateY(15deg) rotateX(5deg) scale(1.15);
+}
+
+.stat-card:hover .stat-icon svg {
+  transform: translateZ(20px) rotateZ(5deg);
+  filter: drop-shadow(0 8px 16px rgba(201, 169, 97, 0.5));
 }
 
 .stat-value {
@@ -232,7 +250,7 @@
 /* About Section */
 .about-section {
   padding: 6rem 0;
-  background: var(--color-bg);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -260,6 +278,22 @@
   font-weight: 600;
   color: var(--color-accent);
   margin-bottom: 2rem;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+
+.section-badge svg {
+  transform: translateZ(0);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.section-badge:hover {
+  transform: translateY(-3px) rotateX(5deg);
+  box-shadow: 0 8px 20px rgba(201, 169, 97, 0.2);
+}
+
+.section-badge:hover svg {
+  transform: translateZ(10px) rotateZ(15deg) scale(1.1);
 }
 
 .section-title {
@@ -352,7 +386,7 @@
 /* Features Section */
 .features-section {
   padding: 6rem 0;
-  background: var(--color-bg-alt);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -484,7 +518,7 @@
 /* News Section */
 .news-section {
   padding: 6rem 0;
-  background: var(--color-bg-alt);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -560,7 +594,7 @@
 /* Testimonials Section */
 .testimonials-section {
   padding: 6rem 0;
-  background: var(--color-bg);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -574,7 +608,7 @@
 
 .testimonial-card {
   padding: 2.5rem;
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   border-radius: 20px;
   border: 2px solid var(--color-border);
   transition: all 0.3s ease;
@@ -617,7 +651,7 @@
 /* CTA Section */
 .cta-section {
   padding: 6rem 0;
-  background: var(--color-gradient-hero);
+  background: transparent;
   color: var(--color-bg-light);
   text-align: center;
   position: relative;
@@ -634,6 +668,40 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: sparkle3d 4s ease-in-out infinite;
+}
+
+.cta-icon svg {
+  transform: translateZ(0);
+  filter: drop-shadow(0 8px 16px rgba(212, 184, 118, 0.4));
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cta-wrapper:hover .cta-icon {
+  transform: rotateY(25deg) rotateX(15deg) scale(1.2);
+}
+
+.cta-wrapper:hover .cta-icon svg {
+  transform: translateZ(40px) rotateZ(15deg);
+  filter: drop-shadow(0 12px 24px rgba(212, 184, 118, 0.6));
+}
+
+@keyframes sparkle3d {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) rotateY(10deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-12px) rotateY(0deg) scale(1.1);
+  }
+  75% {
+    transform: translateY(-8px) rotateY(-10deg) scale(1.05);
+  }
 }
 
 .cta-title {

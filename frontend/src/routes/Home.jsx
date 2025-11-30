@@ -136,7 +136,7 @@ function Home() {
               return (
                 <div key={index} className="stat-card">
                   <div className="stat-icon">
-                    <IconComponent size={48} />
+                    <IconComponent size={56} />
                   </div>
                   <div className="stat-value">{stat.value}</div>
                   <div className="stat-label">{stat.label}</div>
@@ -176,10 +176,10 @@ function Home() {
                 ))}
               </div>
             </div>
-            <div className="about-visual">
+              <div className="about-visual">
               <div className="visual-box">
                 <div className="visual-icon">
-                  <Scale size={72} />
+                  <Scale size={88} />
                 </div>
                 <div className="visual-stats">
                   <div className="visual-stat">
@@ -283,7 +283,7 @@ function Home() {
         <div className="container">
           <div className="section-header">
             <div className="section-badge">
-              <Newspaper size={24} />
+              <Newspaper size={28} />
             </div>
             <h2 className="section-title">Latest Legal News & Updates</h2>
             <p className="section-subtitle">Stay informed with the latest developments in law</p>
@@ -318,9 +318,9 @@ function Home() {
         <section className="testimonials-section fade-in-section">
           <div className="container">
             <div className="section-header">
-              <div className="section-badge">
-                <Star size={24} />
-              </div>
+            <div className="section-badge">
+              <Star size={28} />
+            </div>
               <h2 className="section-title">What Our Clients Say</h2>
               <p className="section-subtitle">Trusted by clients across Rajasthan</p>
             </div>
@@ -355,7 +355,7 @@ function Home() {
         <div className="container">
           <div className="cta-wrapper">
             <div className="cta-icon">
-              <Sparkles size={80} />
+              <Sparkles size={96} />
             </div>
             <h2 className="cta-title">Ready to Get Started?</h2>
             <p className="cta-description">
