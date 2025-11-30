@@ -227,7 +227,7 @@ function Home() {
         <div className="container">
           <div className="section-header">
             <div className="section-badge">
-              <Scale size={24} />
+              <Scale size={28} />
             </div>
             <h2 className="section-title">Our Practice Areas</h2>
             <p className="section-subtitle">Comprehensive legal expertise across diverse domains</p>

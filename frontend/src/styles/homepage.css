@@ -199,12 +199,14 @@
   background: var(--color-bg);
   border-radius: 20px;
   border: 2px solid var(--color-border);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border-color: var(--color-accent);
 }
 
@@ -416,12 +418,14 @@
   border-radius: 20px;
   border: 2px solid var(--color-border);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
   border-color: var(--color-accent);
 }
 
@@ -535,12 +539,13 @@
   background: var(--color-bg);
   border-radius: 20px;
   border: 2px solid var(--color-border);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
 }
 
 .news-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border-color: var(--color-accent);
 }
 
@@ -611,12 +616,13 @@
   background: var(--color-bg);
   border-radius: 20px;
   border: 2px solid var(--color-border);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border-color: var(--color-accent);
 }
 
