@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ChevronDown, Scale } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import ThemeSwitcher from './ThemeSwitcher'
 
 function Navbar() {
@@ -88,10 +88,16 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>
-          <Scale size={28} className="navbar-brand-icon" />
+          <img 
+            src="/logo.png" 
+            alt="M.R. Advocates & Associates" 
+            className="navbar-brand-logo"
+          />
           <div className="navbar-brand-text">
-            <span>M.R. Advocates </span>
-            <span> & Associates</span>
+            <div className="navbar-brand-main">
+              <span className="navbar-brand-line1">M.R. Advocates</span>
+              <span className="navbar-brand-line2">& Associates</span>
+            </div>
             <span className="navbar-brand-subtitle">Jaipur, Rajasthan</span>
           </div>
         </Link>
