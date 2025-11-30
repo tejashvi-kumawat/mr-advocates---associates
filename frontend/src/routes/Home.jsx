@@ -97,6 +97,13 @@ function Home() {
 
   return (
     <main className="home-main">
+      {/* Animated Background Elements */}
+      <div className="animated-bg-elements">
+        <div className="bg-orb bg-orb-1"></div>
+        <div className="bg-orb bg-orb-2"></div>
+        <div className="bg-orb bg-orb-3"></div>
+        <div className="bg-orb bg-orb-4"></div>
+      </div>
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-container">
