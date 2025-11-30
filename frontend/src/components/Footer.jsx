@@ -118,12 +118,15 @@ function Footer() {
             <h3>Contact Us</h3>
             <p>
               <strong>Address:</strong><br />
-              Civil Lines, Jaipur<br />
-              Rajasthan 302006, India
+              <br />
+              On Sikar Road, near Sunshine Resort &amp; Chirmi Dhaba,<br />
+              Tantyawas, Jaipur, Rajasthan, India
             </p>
             <p>
-              <strong>Phone:</strong> +91 141 XXX XXXX<br />
-              <strong>Email:</strong> info@mradvocates.in
+              <strong>Phone:</strong> +91 9782828393<br />
+              <strong>Phone:</strong> +91 9887555345<br />
+              <strong>Phone:</strong> +91 9799548126<br />
+              <strong>Email:</strong> rakeshkumawat17011980@gmail.com
             </p>
             <p>
               <strong>Hours:</strong><br />

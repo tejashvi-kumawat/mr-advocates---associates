@@ -58,8 +58,9 @@ function Contact() {
               </div>
               <div className="contact-info-content">
                 <h4>Phone</h4>
-                <p>+91 141 XXX XXXX</p>
-                <p>+91 98XXX XXXXX (Mobile)</p>
+                <a href='tel:+919782828393'>Phone: +91 9782828393</a>
+                <a href='tel:+919887555345'>Phone: +91 9887555345</a>
+                <a href='tel:+919799548126'>Phone: +91 9799548126</a>
               </div>
             </div>
             
