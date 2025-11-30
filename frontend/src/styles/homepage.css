@@ -59,6 +59,17 @@
   padding-top: clamp(6rem, 12vw, 8rem);
 }
 
+.homepage-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero section always visible */
+.homepage-hero {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Hero Section */
 .homepage-hero {
   min-height: 90vh;
