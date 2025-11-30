@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 export function useSEO(seoData) {
   useEffect(() => {
     const {
-      title = 'Best Advocates in Jaipur | Best Lawyers in India | M.R. Advocates',
+      title = 'Best Advocates in Jaipur | Best Lawyers in India | M.R. Advocates & Associates',
       description = 'Best advocate firm in Jaipur, Rajasthan. Top lawyers in India for civil, criminal, corporate, family, property, and revenue cases. Expert legal services with 25+ years experience.',
       keywords = 'best advocate in jaipur, best advocates in india, best advocates in rajasthan, advocate firm, lawyer firm, best lawyers, best lawyers in jaipur, best lawyers in india, best lawyers in rajasthan, civil case expert, revenue case expert, criminal case expert, property case expert, corporate case expert, family case expert, top advocate firm jaipur, leading lawyer firm rajasthan, expert advocates jaipur, best law firm india',
       canonical = 'https://www.mradvocates.in',

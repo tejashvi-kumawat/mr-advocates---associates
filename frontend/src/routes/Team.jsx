@@ -10,7 +10,7 @@ function Team() {
 
   // SEO Optimization
   useSEO({
-    title: 'Best Lawyers Team in Jaipur | Expert Advocates | M.R. Advocates',
+    title: 'Best Lawyers Team in Jaipur | Expert Advocates | M.R. Advocates & Associates',
     description: 'Meet our experienced team of best lawyers and advocates in Jaipur, India. Expert legal professionals including civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, and revenue case expert.',
     keywords: 'best lawyers team jaipur, expert advocates team, best lawyers in india, civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, revenue case expert, top lawyer firm team, best advocate firm team',
     canonical: 'https://www.mradvocates.in/team'

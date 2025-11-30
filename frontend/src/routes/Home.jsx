@@ -49,7 +49,7 @@ function Home() {
 
   // SEO Optimization
   useSEO({
-    title: 'Best Advocates in Jaipur | Best Lawyers in India | M.R. Advocates',
+    title: 'Best Advocates in Jaipur | Best Lawyers in India | M.R. Advocates & Associates',
     description: 'Best advocate firm in Jaipur, Rajasthan. Top lawyers in India for civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, and revenue case expert services. 25+ years experience.',
     keywords: 'best advocate in jaipur, best advocates in india, best advocates in rajasthan, advocate firm, lawyer firm, best lawyers, best lawyers in jaipur, best lawyers in india, best lawyers in rajasthan, civil case expert, revenue case expert, criminal case expert, property case expert, corporate case expert, family case expert, top advocate firm jaipur, leading lawyer firm rajasthan, expert advocates jaipur, best law firm india',
     canonical: 'https://www.mradvocates.in'
@@ -234,7 +234,7 @@ function Home() {
               <span>Trusted Legal Firm</span>
             </div>
             <h1 className="home-intro-title">
-              Best Advocates in <span className="home-gradient-text">Jaipur</span> | Top Lawyers in India
+              Best Advocates in <span className="home-gradient-text">Jaipur</span> | Top Lawyers in India | M.R. Advocates & Associates
             </h1>
             <div className="home-intro-content">
               <div className="home-intro-text">
@@ -285,7 +285,7 @@ function Home() {
       >
         <div className="home-container">
           <div className="home-section-header">
-            <h2 className="home-section-title">Why Choose Our Advocate Firm - Best Lawyers in Jaipur</h2>
+            <h2 className="home-section-title">Why Choose Our Advocate Firm - Best Lawyers in Jaipur | M.R. Advocates & Associates</h2>
             <p className="home-section-subtitle">Excellence in every aspect of legal representation as one of the best advocates in India</p>
           </div>
           <div className="home-features-grid">

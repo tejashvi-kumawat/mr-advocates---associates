@@ -10,7 +10,7 @@ function Services() {
 
   // SEO Optimization
   useSEO({
-    title: 'Best Legal Services in Jaipur | Expert Lawyer Firm | M.R. Advocates',
+    title: 'Best Legal Services in Jaipur | Expert Lawyer Firm | M.R. Advocates & Associates',
     description: 'Best advocate firm in Jaipur offering comprehensive legal services: litigation, documentation, advisory, ADR, compliance. Expert lawyers including civil case expert, criminal case expert, corporate case expert, and revenue case expert.',
     keywords: 'best legal services jaipur, advocate firm services, lawyer firm services, expert legal services, civil case expert, criminal case expert, corporate case expert, revenue case expert, property case expert, family case expert, litigation expert, legal consultation expert',
     canonical: 'https://www.mradvocates.in/services'

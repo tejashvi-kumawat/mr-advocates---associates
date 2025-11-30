@@ -27,7 +27,7 @@ function PracticeAreaDetail() {
 
   // SEO Optimization
   useSEO(area ? {
-    title: `${area.title} Case Expert in Jaipur | Best ${area.title} Lawyer | M.R. Advocates`,
+    title: `${area.title} Case Expert in Jaipur | Best ${area.title} Lawyer | M.R. Advocates & Associates`,
     description: `Best ${area.title.toLowerCase()} case expert in Jaipur, Rajasthan. Expert ${area.title} legal services from top lawyers in India. Comprehensive legal solutions for ${area.title.toLowerCase()} matters.`,
     keywords: `${area.title.toLowerCase()} case expert, ${area.title} lawyer Jaipur, ${area.title} advocate Rajasthan, best ${area.title} lawyer, ${area.title} legal services, expert ${area.title} lawyer, top ${area.title} advocate, best advocates jaipur, best lawyers india`,
     canonical: `https://www.mradvocates.in/practice-areas/${slug}`

@@ -10,7 +10,7 @@ function PracticeAreas() {
 
   // SEO Optimization
   useSEO({
-    title: 'Expert Practice Areas | Civil Case Expert | Revenue Case Expert | Best Advocates Jaipur',
+    title: 'Expert Practice Areas | Civil Case Expert | Revenue Case Expert | Best Advocates Jaipur | M.R. Advocates & Associates',
     description: 'Best advocate firm in Jaipur offering expert legal services: civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, revenue case expert. Top lawyers in India.',
     keywords: 'civil case expert, revenue case expert, criminal case expert, property case expert, corporate case expert, family case expert, practice areas jaipur, best advocates jaipur, expert lawyers, top lawyer firm, best law firm india',
     canonical: 'https://www.mradvocates.in/practice-areas'

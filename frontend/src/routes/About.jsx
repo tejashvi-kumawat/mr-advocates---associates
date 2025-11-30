@@ -9,7 +9,7 @@ function About() {
 
   // SEO Optimization
   useSEO({
-    title: 'About Best Advocate Firm in Jaipur | Best Lawyers in India',
+    title: 'About Best Advocate Firm in Jaipur | Best Lawyers in India | M.R. Advocates & Associates',
     description: 'M.R. Advocates and Associates - Best advocate firm in Jaipur, Rajasthan with 25+ years of legal excellence. Top lawyers in India providing comprehensive legal services including civil case expert, criminal case expert, corporate case expert, and revenue case expert.',
     keywords: 'best advocate firm jaipur, best lawyers in india, best advocates in rajasthan, lawyer firm history, expert advocates, top law firm, leading advocate firm, experienced lawyers, legal expertise, civil case expert, revenue case expert',
     canonical: 'https://www.mradvocates.in/about'
