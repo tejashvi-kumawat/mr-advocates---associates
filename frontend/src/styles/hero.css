@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-  background: transparent;
+  background: var(--color-gradient-hero);
   color: var(--color-bg-light);
   padding: var(--spacing-2xl) 0;
   z-index: 1;
