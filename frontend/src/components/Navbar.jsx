@@ -40,19 +40,26 @@ function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen)
   const closeMenu = () => setMenuOpen(false)
 
-  const handleDropdownToggle = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
+  const handleDropdownToggle = (dropdown, e) => {
+    e.stopPropagation()
+    // Toggle dropdown - if same dropdown is clicked, close it; otherwise open new one
+    if (activeDropdown === dropdown) {
+      setActiveDropdown(null)
+    } else {
+      setActiveDropdown(dropdown)
+    }
   }
 
   const handleDropdownMouseEnter = (dropdown) => {
+    // Only auto-open on hover for desktop (width > 768px)
     if (window.innerWidth > 768) {
       setActiveDropdown(dropdown)
     }
   }
 
   const handleDropdownMouseLeave = (e) => {
+    // Only auto-close on hover for desktop
     if (window.innerWidth > 768) {
-      // Check if mouse is moving to dropdown menu
       const dropdown = e.currentTarget
       const relatedTarget = e.relatedTarget
       
@@ -63,13 +70,18 @@ function Navbar() {
       
       // Add delay to allow moving to dropdown
       setTimeout(() => {
-        // Double check if mouse is still not in dropdown area
         const activeDropdownEl = dropdownRefs.current[activeDropdown]
         if (activeDropdownEl && !activeDropdownEl.matches(':hover')) {
           setActiveDropdown(null)
         }
-      }, 300)
+      }, 200)
     }
+  }
+
+  // Close dropdown when clicking on a link
+  const handleDropdownLinkClick = () => {
+    setActiveDropdown(null)
+    closeMenu()
   }
 
   return (
@@ -105,7 +117,7 @@ function Navbar() {
           >
             <button 
               className={`navbar-link dropdown-trigger ${activeDropdown === 'services' ? 'active' : ''}`}
-              onClick={() => handleDropdownToggle('services')}
+              onClick={(e) => handleDropdownToggle('services', e)}
             >
               Services <ChevronDown size={16} />
             </button>
@@ -114,9 +126,9 @@ function Navbar() {
               onMouseEnter={() => handleDropdownMouseEnter('services')}
               onMouseLeave={handleDropdownMouseLeave}
             >
-              <li><Link to="/practice-areas" onClick={closeMenu}>Practice Areas</Link></li>
-              <li><Link to="/services" onClick={closeMenu}>Our Services</Link></li>
-              <li><Link to="/case-studies" onClick={closeMenu}>Case Studies</Link></li>
+              <li><Link to="/practice-areas" onClick={handleDropdownLinkClick}>Practice Areas</Link></li>
+              <li><Link to="/services" onClick={handleDropdownLinkClick}>Our Services</Link></li>
+              <li><Link to="/case-studies" onClick={handleDropdownLinkClick}>Case Studies</Link></li>
             </ul>
           </li>
 
@@ -128,7 +140,7 @@ function Navbar() {
           >
             <button 
               className={`navbar-link dropdown-trigger ${activeDropdown === 'about' ? 'active' : ''}`}
-              onClick={() => handleDropdownToggle('about')}
+              onClick={(e) => handleDropdownToggle('about', e)}
             >
               About <ChevronDown size={16} />
             </button>
@@ -137,9 +149,9 @@ function Navbar() {
               onMouseEnter={() => handleDropdownMouseEnter('about')}
               onMouseLeave={handleDropdownMouseLeave}
             >
-              <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
-              <li><Link to="/team" onClick={closeMenu}>Our Team</Link></li>
-              <li><Link to="/testimonials" onClick={closeMenu}>Testimonials</Link></li>
+              <li><Link to="/about" onClick={handleDropdownLinkClick}>About Us</Link></li>
+              <li><Link to="/team" onClick={handleDropdownLinkClick}>Our Team</Link></li>
+              <li><Link to="/testimonials" onClick={handleDropdownLinkClick}>Testimonials</Link></li>
             </ul>
           </li>
 
