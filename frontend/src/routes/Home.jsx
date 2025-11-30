@@ -54,12 +54,13 @@ function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
           setVisibleSections(prev => new Set([...prev, entry.target.id]))
         }
       })
     }, observerOptions)
 
-    const sections = document.querySelectorAll('.homepage-section')
+    const sections = document.querySelectorAll('.homepage-section:not(.homepage-hero)')
     sections.forEach(section => observer.observe(section))
 
     return () => {
