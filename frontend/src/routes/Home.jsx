@@ -20,10 +20,7 @@ import {
   Zap,
   Target,
   ChevronLeft,
-  ChevronRight,
-  BookOpen,
-  Briefcase,
-  FileText
+  ChevronRight
 } from 'lucide-react'
 import '../styles/homepage.css'
 
@@ -31,10 +28,8 @@ function Home() {
   const [practiceAreas, setPracticeAreas] = useState([])
   const [news, setNews] = useState([])
   const [testimonials, setTestimonials] = useState([])
-  const [loading, setLoading] = useState(true)
   const practiceCarouselRef = useRef(null)
 
-  // SEO Optimization
   useSEO({
     title: 'Best Advocates in Jaipur | Best Lawyers in India | M.R. Advocates & Associates',
     description: 'Best advocate firm in Jaipur, Rajasthan. Top lawyers in India for civil case expert, criminal case expert, corporate case expert, family case expert, property case expert, and revenue case expert services. 25+ years experience.',
@@ -47,25 +42,17 @@ function Home() {
   }, [])
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -80px 0px'
-    }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in')
+          entry.target.classList.add('fade-in-visible')
         }
       })
-    }, observerOptions)
+    }, { threshold: 0.1 })
 
-    const sections = document.querySelectorAll('.home-section')
+    const sections = document.querySelectorAll('.fade-in-section')
     sections.forEach(section => observer.observe(section))
-
-    return () => {
-      sections.forEach(section => observer.unobserve(section))
-    }
+    return () => sections.forEach(section => observer.unobserve(section))
   }, [])
 
   const fetchHomeData = async () => {
@@ -75,60 +62,44 @@ function Home() {
         api.getNews({ page_size: 3 }),
         api.getTestimonials()
       ])
-
       setPracticeAreas(areasRes.data.slice(0, 6))
       setNews(newsRes.data.results || newsRes.data.slice(0, 3))
       setTestimonials(testimonialRes.data.filter(t => t.is_featured).slice(0, 3))
     } catch (error) {
       console.error('Error fetching home data:', error)
-    } finally {
-      setLoading(false)
     }
   }
 
   const stats = [
-    { label: 'Years Experience', value: '25+', icon: Clock, color: '#c9a961' },
-    { label: 'Cases Won', value: '500+', icon: Award, color: '#d4b876' },
-    { label: 'Happy Clients', value: '1000+', icon: Users, color: '#c9a961' },
-    { label: 'Success Rate', value: '95%', icon: TrendingUp, color: '#d4b876' }
+    { label: 'Years Experience', value: '25+', icon: Clock },
+    { label: 'Cases Won', value: '500+', icon: Award },
+    { label: 'Happy Clients', value: '1000+', icon: Users },
+    { label: 'Success Rate', value: '95%', icon: TrendingUp }
   ]
 
   const features = [
     {
       icon: Shield,
       title: "Expert Legal Counsel",
-      description: "Experienced advocates with deep knowledge across multiple practice areas",
-      gradient: 'linear-gradient(135deg, #c9a961 0%, #d4b876 100%)'
+      description: "Experienced advocates with deep knowledge across multiple practice areas"
     },
     {
       icon: Zap,
       title: "Lightning Fast Response",
-      description: "Quick turnaround times without compromising on quality and thoroughness",
-      gradient: 'linear-gradient(135deg, #d4b876 0%, #c9a961 100%)'
+      description: "Quick turnaround times without compromising on quality and thoroughness"
     },
     {
       icon: Target,
       title: "Strategic Approach",
-      description: "Data-driven strategies tailored to achieve the best possible outcomes",
-      gradient: 'linear-gradient(135deg, #c9a961 0%, #d4b876 100%)'
+      description: "Data-driven strategies tailored to achieve the best possible outcomes"
     }
   ]
 
-  const services = [
-    { icon: BookOpen, title: 'Legal Consultation', desc: 'Expert advice on all legal matters' },
-    { icon: Briefcase, title: 'Litigation Services', desc: 'Comprehensive court representation' },
-    { icon: FileText, title: 'Documentation', desc: 'Legal document preparation & review' }
-  ]
-
   return (
-    <div className="home-page">
-      {/* Grid Background */}
-      <div className="home-grid-bg"></div>
-      
+    <main className="home-main">
       {/* Hero Section */}
-      <section className="home-hero home-section">
-        <div className="hero-background"></div>
-        <div className="container hero-container">
+      <section className="hero-section">
+        <div className="hero-container">
           <div className="hero-content">
             <div className="hero-badge">
               <Gavel size={18} />
@@ -136,53 +107,35 @@ function Home() {
             </div>
             <h1 className="hero-title">
               M.R. Advocates<br />
-              <span className="hero-title-accent">& Associates</span>
+              <span className="title-accent">& Associates</span>
             </h1>
             <h2 className="hero-subtitle">Premier Legal Services in Jaipur, Rajasthan</h2>
             <p className="hero-description">
               With decades of combined experience, we provide exceptional legal representation across civil, criminal, corporate, and family law matters.
             </p>
-            <div className="hero-actions">
-              <Link to="/appointment" className="btn-hero btn-hero-primary">
+            <div className="hero-buttons">
+              <Link to="/appointment" className="btn-primary">
                 <span>Book a Consultation</span>
                 <ArrowRight size={20} />
               </Link>
-              <Link to="/practice-areas" className="btn-hero btn-hero-outline">
+              <Link to="/practice-areas" className="btn-secondary">
                 <span>View Practice Areas</span>
                 <ArrowRight size={20} />
               </Link>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <div className="hero-card">
-              <div className="hero-card-icon">
-                <Scale size={80} />
-              </div>
-              <div className="hero-card-stats">
-                <div className="hero-stat">
-                  <div className="hero-stat-value">25+</div>
-                  <div className="hero-stat-label">Years</div>
-                </div>
-                <div className="hero-stat-divider"></div>
-                <div className="hero-stat">
-                  <div className="hero-stat-value">1000+</div>
-                  <div className="hero-stat-label">Clients</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="home-section home-stats">
+      <section className="stats-section fade-in-section">
         <div className="container">
-          <div className="stats-wrapper">
+          <div className="stats-grid">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon
               return (
-                <div key={index} className="stat-item" style={{ '--delay': `${index * 0.1}s` }}>
-                  <div className="stat-icon-wrapper" style={{ '--stat-color': stat.color }}>
+                <div key={index} className="stat-card">
+                  <div className="stat-icon">
                     <IconComponent size={48} />
                   </div>
                   <div className="stat-value">{stat.value}</div>
@@ -195,18 +148,18 @@ function Home() {
       </section>
 
       {/* About Section */}
-      <section className="home-section home-about">
+      <section className="about-section fade-in-section">
         <div className="container">
-          <div className="about-content">
+          <div className="about-wrapper">
             <div className="about-text">
               <div className="section-badge">
                 <Gavel size={20} />
                 <span>About Us</span>
               </div>
               <h2 className="section-title">
-                Best Advocates in <span className="text-gradient">Jaipur</span> | Top Lawyers in India
+                Best Advocates in <span className="gradient-text">Jaipur</span> | Top Lawyers in India
               </h2>
-              <div className="about-description">
+              <div className="about-content">
                 <p>
                   M.R. Advocates and Associates is recognized as one of the <strong>best advocate firms in Jaipur</strong> and among the <strong>best advocates in India</strong>. As a premier <strong>lawyer firm</strong> in Rajasthan, we are dedicated to delivering comprehensive legal solutions with unwavering commitment to our clients.
                 </p>
@@ -216,33 +169,37 @@ function Home() {
               </div>
               <div className="about-features">
                 {['Expert Legal Team', 'Proven Track Record', 'Client-Focused Approach'].map((feature, idx) => (
-                  <div key={idx} className="about-feature">
+                  <div key={idx} className="feature-check">
                     <CheckCircle2 size={22} />
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="about-services">
-              {services.map((service, idx) => {
-                const IconComponent = service.icon
-                return (
-                  <div key={idx} className="service-card">
-                    <div className="service-icon">
-                      <IconComponent size={32} />
-                    </div>
-                    <h3 className="service-title">{service.title}</h3>
-                    <p className="service-desc">{service.desc}</p>
+            <div className="about-visual">
+              <div className="visual-box">
+                <div className="visual-icon">
+                  <Scale size={72} />
+                </div>
+                <div className="visual-stats">
+                  <div className="visual-stat">
+                    <div className="visual-value">25+</div>
+                    <div className="visual-label">Years</div>
                   </div>
-                )
-              })}
+                  <div className="visual-divider"></div>
+                  <div className="visual-stat">
+                    <div className="visual-value">1000+</div>
+                    <div className="visual-label">Clients</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="home-section home-features">
+      <section className="features-section fade-in-section">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Why Choose Our Advocate Firm</h2>
@@ -252,12 +209,12 @@ function Home() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon
               return (
-                <div key={index} className="feature-item" style={{ '--delay': `${index * 0.15}s` }}>
-                  <div className="feature-icon" style={{ background: feature.gradient }}>
-                    <IconComponent size={40} color="white" />
+                <div key={index} className="feature-card">
+                  <div className="feature-icon-wrapper">
+                    <IconComponent size={40} />
                   </div>
                   <h3 className="feature-title">{feature.title}</h3>
-                  <p className="feature-text">{feature.description}</p>
+                  <p className="feature-description">{feature.description}</p>
                 </div>
               )
             })}
@@ -266,7 +223,7 @@ function Home() {
       </section>
 
       {/* Practice Areas Section */}
-      <section className="home-section home-practice">
+      <section className="practice-section fade-in-section">
         <div className="container">
           <div className="section-header">
             <div className="section-badge">
@@ -275,12 +232,12 @@ function Home() {
             <h2 className="section-title">Our Practice Areas</h2>
             <p className="section-subtitle">Comprehensive legal expertise across diverse domains</p>
           </div>
-          <div className="practice-wrapper">
+          <div className="practice-carousel-wrapper">
             <button 
-              className="carousel-nav carousel-prev"
+              className="carousel-button prev"
               onClick={() => {
                 if (practiceCarouselRef.current) {
-                  const cardWidth = practiceCarouselRef.current.querySelector('.practice-item')?.offsetWidth || 320
+                  const cardWidth = practiceCarouselRef.current.querySelector('.practice-card-item')?.offsetWidth || 320
                   practiceCarouselRef.current.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' })
                 }
               }}
@@ -289,7 +246,7 @@ function Home() {
             </button>
             <div className="practice-carousel" ref={practiceCarouselRef}>
               {practiceAreas.map((area) => (
-                <div key={area.id} className="practice-item">
+                <div key={area.id} className="practice-card-item">
                   <Card
                     icon={area.icon}
                     title={area.title}
@@ -301,10 +258,10 @@ function Home() {
               ))}
             </div>
             <button 
-              className="carousel-nav carousel-next"
+              className="carousel-button next"
               onClick={() => {
                 if (practiceCarouselRef.current) {
-                  const cardWidth = practiceCarouselRef.current.querySelector('.practice-item')?.offsetWidth || 320
+                  const cardWidth = practiceCarouselRef.current.querySelector('.practice-card-item')?.offsetWidth || 320
                   practiceCarouselRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' })
                 }
               }}
@@ -313,7 +270,7 @@ function Home() {
             </button>
           </div>
           <div className="section-footer">
-            <Link to="/practice-areas" className="btn-link">
+            <Link to="/practice-areas" className="link-button">
               <span>Explore All Practice Areas</span>
               <ArrowRight size={20} />
             </Link>
@@ -322,7 +279,7 @@ function Home() {
       </section>
 
       {/* News Section */}
-      <section className="home-section home-news">
+      <section className="news-section fade-in-section">
         <div className="container">
           <div className="section-header">
             <div className="section-badge">
@@ -333,13 +290,13 @@ function Home() {
           </div>
           <div className="news-grid">
             {news.map((article) => (
-              <article key={article.id} className="news-item">
-                <div className="news-meta">
+              <article key={article.id} className="news-card">
+                <div className="news-header">
                   <span className="news-category">{article.category}</span>
                   <time className="news-date">{new Date(article.published_date).toLocaleDateString()}</time>
                 </div>
                 <h3 className="news-title">{article.title}</h3>
-                <p className="news-excerpt">{article.summary}</p>
+                <p className="news-summary">{article.summary}</p>
                 <Link to={`/legal-news/${article.slug}`} className="news-link">
                   Read Article
                   <ArrowRight size={16} />
@@ -348,7 +305,7 @@ function Home() {
             ))}
           </div>
           <div className="section-footer">
-            <Link to="/legal-news" className="btn-link btn-link-secondary">
+            <Link to="/legal-news" className="link-button link-button-secondary">
               <span>View All News</span>
               <ArrowRight size={20} />
             </Link>
@@ -358,7 +315,7 @@ function Home() {
 
       {/* Testimonials Section */}
       {testimonials.length > 0 && (
-        <section className="home-section home-testimonials">
+        <section className="testimonials-section fade-in-section">
           <div className="container">
             <div className="section-header">
               <div className="section-badge">
@@ -369,11 +326,11 @@ function Home() {
             </div>
             <div className="testimonials-grid">
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="testimonial-item">
+                <div key={testimonial.id} className="testimonial-card">
                   <div className="testimonial-rating">
                     <StarRating rating={testimonial.rating} size={20} />
                   </div>
-                  <blockquote className="testimonial-quote">"{testimonial.content}"</blockquote>
+                  <blockquote className="testimonial-text">"{testimonial.content}"</blockquote>
                   <div className="testimonial-author">
                     <div className="testimonial-name">{testimonial.client_name}</div>
                     {testimonial.client_designation && (
@@ -384,7 +341,7 @@ function Home() {
               ))}
             </div>
             <div className="section-footer">
-              <Link to="/testimonials" className="btn-link btn-link-secondary">
+              <Link to="/testimonials" className="link-button link-button-secondary">
                 <span>Read All Testimonials</span>
                 <ArrowRight size={20} />
               </Link>
@@ -394,29 +351,29 @@ function Home() {
       )}
 
       {/* CTA Section */}
-      <section className="home-section home-cta">
+      <section className="cta-section fade-in-section">
         <div className="container">
-          <div className="cta-content">
+          <div className="cta-wrapper">
             <div className="cta-icon">
               <Sparkles size={80} />
             </div>
             <h2 className="cta-title">Ready to Get Started?</h2>
-            <p className="cta-text">
+            <p className="cta-description">
               Contact us today for a consultation. Our experienced advocates are ready to assist you 
               with your legal matters and provide the expert guidance you need.
             </p>
-            <div className="cta-actions">
-              <Link to="/enquiry" className="btn-hero btn-hero-primary btn-hero-large">
+            <div className="cta-buttons">
+              <Link to="/enquiry" className="btn-primary btn-large">
                 <span>Submit an Enquiry</span>
               </Link>
-              <Link to="/appointment" className="btn-hero btn-hero-outline btn-hero-large">
+              <Link to="/appointment" className="btn-secondary btn-large">
                 <span>Book an Appointment</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
 
