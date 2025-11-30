@@ -523,16 +523,30 @@
   }
   
   .navbar-brand {
-    font-size: 1.125rem;
+    gap: 0.5rem;
   }
   
-  .navbar-brand-icon {
-    width: 22px;
-    height: 22px;
+  .navbar-brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .navbar.scrolled .navbar-brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .navbar-brand-line1 {
+    font-size: 1rem;
+  }
+  
+  .navbar-brand-line2 {
+    font-size: 0.875rem;
   }
   
   .navbar-brand-subtitle {
-    font-size: 0.5625rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.3px;
   }
   
   .navbar-theme-switcher {
