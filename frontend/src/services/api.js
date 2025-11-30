@@ -116,16 +116,48 @@ class ApiService {
   }
 
   async uploadFile(endpoint, formData) {
+    const url = `${this.baseURL}${endpoint}`
     const token = localStorage.getItem('accessToken')
-    const headers = token ? { 'Authorization': `Bearer ${token}` } : {}
+    const headers = {
+      ...this.getAuthHeaders(),
+    }
 
-    const response = await fetch(`${this.baseURL}${endpoint}`, {
-      method: 'POST',
-      headers,
-      body: formData
-    })
+    try {
+      let response = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: formData
+      })
 
-    return await this.handleResponse(response)
+      if (response.status === 401) {
+        // Token expired, try to refresh
+        const refreshed = await this.refreshToken()
+        if (refreshed) {
+          // Retry the original request with new token
+          const retryHeaders = {
+            ...this.getAuthHeaders(),
+          }
+          response = await fetch(url, {
+            method: 'POST',
+            headers: retryHeaders,
+            body: formData
+          })
+        } else {
+          // Refresh failed, logout
+          localStorage.removeItem('accessToken')
+          localStorage.removeItem('refreshToken')
+          window.location.href = '/secret-admin-portal-2024/login'
+          throw new Error('Session expired. Please login again.')
+        }
+      }
+
+      return await this.handleResponse(response)
+    } catch (error) {
+      if (error.message === 'Session expired. Please login again.') {
+        throw error
+      }
+      throw new Error(error.message || 'Upload failed')
+    }
   }
 
   // ============================================
@@ -273,16 +305,48 @@ class ApiService {
   }
 
   async updateAdminTeam(id, formData) {
+    const url = `${this.baseURL}/admin/team/${id}/`
     const token = localStorage.getItem('accessToken')
-    const headers = token ? { 'Authorization': `Bearer ${token}` } : {}
+    const headers = {
+      ...this.getAuthHeaders(),
+    }
 
-    const response = await fetch(`${this.baseURL}/admin/team/${id}/`, {
-      method: 'PUT',
-      headers,
-      body: formData
-    })
+    try {
+      let response = await fetch(url, {
+        method: 'PUT',
+        headers,
+        body: formData
+      })
 
-    return await this.handleResponse(response)
+      if (response.status === 401) {
+        // Token expired, try to refresh
+        const refreshed = await this.refreshToken()
+        if (refreshed) {
+          // Retry the original request with new token
+          const retryHeaders = {
+            ...this.getAuthHeaders(),
+          }
+          response = await fetch(url, {
+            method: 'PUT',
+            headers: retryHeaders,
+            body: formData
+          })
+        } else {
+          // Refresh failed, logout
+          localStorage.removeItem('accessToken')
+          localStorage.removeItem('refreshToken')
+          window.location.href = '/secret-admin-portal-2024/login'
+          throw new Error('Session expired. Please login again.')
+        }
+      }
+
+      return await this.handleResponse(response)
+    } catch (error) {
+      if (error.message === 'Session expired. Please login again.') {
+        throw error
+      }
+      throw new Error(error.message || 'Update failed')
+    }
   }
 
   async deleteAdminTeam(id) {
