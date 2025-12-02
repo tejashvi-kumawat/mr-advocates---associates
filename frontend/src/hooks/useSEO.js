@@ -16,7 +16,7 @@ export function useSEO(seoData) {
       description = 'Best advocate firm in Jaipur, Rajasthan. Top lawyers in India for civil, criminal, corporate, family, property, and revenue cases. Expert legal services with 25+ years experience.',
       keywords = 'best advocate in jaipur, best advocates in india, best advocates in rajasthan, advocate firm, lawyer firm, best lawyers, best lawyers in jaipur, best lawyers in india, best lawyers in rajasthan, civil case expert, revenue case expert, criminal case expert, property case expert, corporate case expert, family case expert, top advocate firm jaipur, leading lawyer firm rajasthan, expert advocates jaipur, best law firm india',
       canonical = 'https://www.mradvocates.in',
-      ogImage = 'https://www.mradvocates.in/logo.png'
+      ogImage = 'https://www.mradvocates.in/logo-google.png'
     } = seoData
 
     // Update document title
